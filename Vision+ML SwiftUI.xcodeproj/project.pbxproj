@@ -28,6 +28,7 @@
 		CE484A33269AA5C900291EA3 /* ImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassification.swift; sourceTree = "<group>"; };
 		CE484A35269AA69100291EA3 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		CE484A37269AACA100291EA3 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		CE484A39269AB2E600291EA3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +45,7 @@
 		CE484A16269A95A000291EA3 = {
 			isa = PBXGroup;
 			children = (
+				CE484A39269AB2E600291EA3 /* README.md */,
 				CE484A21269A95A000291EA3 /* Vision+ML SwiftUI */,
 				CE484A20269A95A000291EA3 /* Products */,
 			);
@@ -62,10 +64,10 @@
 			children = (
 				CE484A37269AACA100291EA3 /* MobileNet.mlmodel */,
 				CE484A22269A95A000291EA3 /* Vision_ML_SwiftUIApp.swift */,
-				CE484A24269A95A000291EA3 /* ContentView.swift */,
 				CE484A26269A95A100291EA3 /* Assets.xcassets */,
 				CE484A2B269A95A100291EA3 /* Info.plist */,
 				CE484A28269A95A100291EA3 /* Preview Content */,
+				CE484A24269A95A000291EA3 /* ContentView.swift */,
 				CE484A31269A962800291EA3 /* ImageClassificationView.swift */,
 				CE484A33269AA5C900291EA3 /* ImageClassification.swift */,
 				CE484A35269AA69100291EA3 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
@@ -288,7 +290,7 @@
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Vision+ML SwiftUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +312,7 @@
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Vision+ML SwiftUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

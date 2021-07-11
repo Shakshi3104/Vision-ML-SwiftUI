@@ -16,24 +16,24 @@ struct ImageClassificationView: View {
     @ObservedObject var classification = ImageClassification()
     
     var body: some View {
-        VStack {
-            ZStack(alignment: .bottom) {
-                // display the image
-                if let image = self.image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .edgesIgnoringSafeArea(.all)
-                }
-                else {
-                    Image(uiImage: UIImage())
-                        .resizable()
-                        .scaledToFill()
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .edgesIgnoringSafeArea(.all)
-                }
-                
+        ZStack(alignment: .bottom) {
+            // display the image
+            if let image = self.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .edgesIgnoringSafeArea(.all)
+            }
+            else {
+                Image(uiImage: UIImage())
+                    .resizable()
+                    .scaledToFill()
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .edgesIgnoringSafeArea(.all)
+            }
+            
+            VStack {
                 // display the classification result
                 Text(classification.classificationLabel)
                     .padding(20)
@@ -42,41 +42,39 @@ struct ImageClassificationView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(.secondary)
                         )
-                    
-            }
             
-            // select camera or photo library
-            Menu {
-                Button(action: {
-                    self.isPresented.toggle()
-                    self.sourceType = .camera
-                }, label: {
-                    Text("Take Photo")
-                })
-                
-                Button(action: {
-                    self.isPresented.toggle()
-                    self.sourceType = .photoLibrary
-                }, label: {
-                    Text("Choose Photo")
-                })
-            } label: {
-                Image(systemName: "camera")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding(5)
-            }
-            .sheet(isPresented: $isPresented, onDismiss: {
-                // Classify the image
-                if let image = self.image {
-                    classification.updateClassifications(for: image)
+                // select camera or photo library
+                Menu {
+                    Button(action: {
+                        self.isPresented.toggle()
+                        self.sourceType = .camera
+                    }, label: {
+                        Text("Take Photo")
+                    })
+                    
+                    Button(action: {
+                        self.isPresented.toggle()
+                        self.sourceType = .photoLibrary
+                    }, label: {
+                        Text("Choose Photo")
+                    })
+                } label: {
+                    Image(systemName: "camera")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .padding(5)
                 }
-            }, content: {
-                ImagePicker(sourceType: self.sourceType, image: $image)
-            })
+                .sheet(isPresented: $isPresented, onDismiss: {
+                    // Classify the image
+                    if let image = self.image {
+                        classification.updateClassifications(for: image)
+                    }
+                }, content: {
+                    ImagePicker(sourceType: self.sourceType, image: $image)
+                })
+            }
         }
-        
     }
 }
 
