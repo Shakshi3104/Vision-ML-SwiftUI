@@ -14,6 +14,7 @@
 		CE484A32269A962800291EA3 /* ImageClassificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE484A31269A962800291EA3 /* ImageClassificationView.swift */; };
 		CE484A34269AA5C900291EA3 /* ImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE484A33269AA5C900291EA3 /* ImageClassification.swift */; };
 		CE484A36269AA69100291EA3 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE484A35269AA69100291EA3 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
+		CE484A38269AACA100291EA3 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE484A37269AACA100291EA3 /* MobileNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CE484A31269A962800291EA3 /* ImageClassificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationView.swift; sourceTree = "<group>"; };
 		CE484A33269AA5C900291EA3 /* ImageClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassification.swift; sourceTree = "<group>"; };
 		CE484A35269AA69100291EA3 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
+		CE484A37269AACA100291EA3 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		CE484A21269A95A000291EA3 /* Vision+ML SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				CE484A37269AACA100291EA3 /* MobileNet.mlmodel */,
 				CE484A22269A95A000291EA3 /* Vision_ML_SwiftUIApp.swift */,
 				CE484A24269A95A000291EA3 /* ContentView.swift */,
 				CE484A26269A95A100291EA3 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 			files = (
 				CE484A25269A95A000291EA3 /* ContentView.swift in Sources */,
 				CE484A23269A95A000291EA3 /* Vision_ML_SwiftUIApp.swift in Sources */,
+				CE484A38269AACA100291EA3 /* MobileNet.mlmodel in Sources */,
 				CE484A32269A962800291EA3 /* ImageClassificationView.swift in Sources */,
 				CE484A34269AA5C900291EA3 /* ImageClassification.swift in Sources */,
 				CE484A36269AA69100291EA3 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,

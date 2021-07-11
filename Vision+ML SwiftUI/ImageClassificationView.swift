@@ -12,22 +12,37 @@ struct ImageClassificationView: View {
     @State private var sourceType = UIImagePickerController.SourceType.photoLibrary
     @State private var image: UIImage?
     
+    // image classifier
+    @ObservedObject var classification = ImageClassification()
+    
     var body: some View {
         VStack {
-            // display the image
-            if let image = self.image {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .edgesIgnoringSafeArea(.all)
-            }
-            else {
-                Image(uiImage: UIImage())
-                    .resizable()
-                    .scaledToFill()
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .edgesIgnoringSafeArea(.all)
+            ZStack(alignment: .bottom) {
+                // display the image
+                if let image = self.image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .edgesIgnoringSafeArea(.all)
+                }
+                else {
+                    Image(uiImage: UIImage())
+                        .resizable()
+                        .scaledToFill()
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .edgesIgnoringSafeArea(.all)
+                }
+                
+                // display the classification result
+                Text(classification.classificationLabel)
+                    .padding(20)
+                    .foregroundColor(.black)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.secondary)
+                        )
+                    
             }
             
             // select camera or photo library
@@ -52,8 +67,13 @@ struct ImageClassificationView: View {
                     .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .padding(5)
             }
-            .sheet(isPresented: $isPresented, content: {
-                ImagePicker(sourceType: self.sourceType, image: $image )
+            .sheet(isPresented: $isPresented, onDismiss: {
+                // Classify the image
+                if let image = self.image {
+                    classification.updateClassifications(for: image)
+                }
+            }, content: {
+                ImagePicker(sourceType: self.sourceType, image: $image)
             })
         }
         
