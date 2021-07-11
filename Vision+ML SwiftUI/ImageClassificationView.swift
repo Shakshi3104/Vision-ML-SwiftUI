@@ -14,6 +14,7 @@ struct ImageClassificationView: View {
     
     var body: some View {
         VStack {
+            // display the image
             if let image = self.image {
                 Image(uiImage: image)
                     .resizable()
@@ -29,6 +30,7 @@ struct ImageClassificationView: View {
                     .edgesIgnoringSafeArea(.all)
             }
             
+            // select camera or photo library
             Menu {
                 Button(action: {
                     self.isPresented.toggle()
@@ -58,6 +60,7 @@ struct ImageClassificationView: View {
     }
 }
 
+// MARK: - ImagePicker
 struct ImagePicker: UIViewControllerRepresentable {
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
 
