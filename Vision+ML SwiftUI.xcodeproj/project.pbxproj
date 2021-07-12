@@ -18,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE0AD1EF269BCD3300125C94 /* IMG_5977.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_5977.PNG; sourceTree = "<group>"; };
+		CE0AD1F0269BCD3300125C94 /* IMG_5972.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_5972.PNG; sourceTree = "<group>"; };
 		CE484A1F269A95A000291EA3 /* Vision+ML SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vision+ML SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE484A22269A95A000291EA3 /* Vision_ML_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision_ML_SwiftUIApp.swift; sourceTree = "<group>"; };
 		CE484A24269A95A000291EA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,9 +44,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE0AD1EE269BCCED00125C94 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE0AD1F0269BCD3300125C94 /* IMG_5972.PNG */,
+				CE0AD1EF269BCD3300125C94 /* IMG_5977.PNG */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
 		CE484A16269A95A000291EA3 = {
 			isa = PBXGroup;
 			children = (
+				CE0AD1EE269BCCED00125C94 /* Documentation */,
 				CE484A39269AB2E600291EA3 /* README.md */,
 				CE484A21269A95A000291EA3 /* Vision+ML SwiftUI */,
 				CE484A20269A95A000291EA3 /* Products */,
