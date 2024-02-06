@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Glur
+import VariableBlurImageView
 
 struct ImageClassificationView: View {
     @State private var isPresented = false
@@ -24,6 +26,14 @@ struct ImageClassificationView: View {
                     .scaledToFill()
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .edgesIgnoringSafeArea(.all)
+                    .glur(offset: 0.3,
+                          interpolation: 0.2,
+                          radius: 4.0,
+                          direction: .down)
+                    .overlay {
+                        LinearGradient(stops: [.init(color: .clear, location: 0.7), .init(color: .white.opacity(0.2), location: 0.85)], startPoint: .top, endPoint: .bottom)
+                            .edgesIgnoringSafeArea(.all)
+                    }
             }
             else {
                 Image(uiImage: UIImage())
@@ -32,7 +42,7 @@ struct ImageClassificationView: View {
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .edgesIgnoringSafeArea(.all)
             }
-            
+
             VStack(spacing: 24) {
                 // display the classification result
                 Text(classification.classificationLabel)
