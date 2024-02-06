@@ -33,7 +33,7 @@ struct ImageClassificationView: View {
                     .edgesIgnoringSafeArea(.all)
             }
             
-            VStack {
+            VStack(spacing: 24) {
                 // display the classification result
                 Text(classification.classificationLabel)
                     .padding(20)
@@ -59,11 +59,16 @@ struct ImageClassificationView: View {
                         Text("Choose Photo")
                     })
                 } label: {
-                    Image(systemName: "camera")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .padding(5)
+                    ZStack {
+                        Circle()
+                            .frame(width: 64, height: 64)
+                        Image(systemName: "camera")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(.white)
+                            .padding(5)
+                    }
                 }
                 .sheet(isPresented: $isPresented, onDismiss: {
                     // Classify the image
