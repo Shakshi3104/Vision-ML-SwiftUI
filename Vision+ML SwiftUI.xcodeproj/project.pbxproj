@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		CE484A34269AA5C900291EA3 /* ImageClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE484A33269AA5C900291EA3 /* ImageClassification.swift */; };
 		CE484A36269AA69100291EA3 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE484A35269AA69100291EA3 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		CE484A38269AACA100291EA3 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE484A37269AACA100291EA3 /* MobileNet.mlmodel */; };
+		CEE908CC2B726548006E7D34 /* Glur in Frameworks */ = {isa = PBXBuildFile; productRef = CEE908CB2B726548006E7D34 /* Glur */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE908CC2B726548006E7D34 /* Glur in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +62,7 @@
 				CE484A39269AB2E600291EA3 /* README.md */,
 				CE484A21269A95A000291EA3 /* Vision+ML SwiftUI */,
 				CE484A20269A95A000291EA3 /* Products */,
+				CEE908CA2B726548006E7D34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +98,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		CEE908CA2B726548006E7D34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -111,6 +121,9 @@
 			dependencies = (
 			);
 			name = "Vision+ML SwiftUI";
+			packageProductDependencies = (
+				CEE908CB2B726548006E7D34 /* Glur */,
+			);
 			productName = "Vision+ML SwiftUI";
 			productReference = CE484A1F269A95A000291EA3 /* Vision+ML SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +151,9 @@
 				Base,
 			);
 			mainGroup = CE484A16269A95A000291EA3;
+			packageReferences = (
+				CEDBBB272B72576300F94C5F /* XCRemoteSwiftPackageReference "Glur" */,
+			);
 			productRefGroup = CE484A20269A95A000291EA3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -302,7 +318,7 @@
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Vision+ML SwiftUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,7 +340,7 @@
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Vision+ML SwiftUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +374,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEDBBB272B72576300F94C5F /* XCRemoteSwiftPackageReference "Glur" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joogps/Glur";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEE908CB2B726548006E7D34 /* Glur */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEDBBB272B72576300F94C5F /* XCRemoteSwiftPackageReference "Glur" */;
+			productName = Glur;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE484A17269A95A000291EA3 /* Project object */;
 }

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Glur
+import VariableBlurImageView
 
 struct ImageClassificationView: View {
     @State private var isPresented = false
@@ -24,6 +26,14 @@ struct ImageClassificationView: View {
                     .scaledToFill()
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .edgesIgnoringSafeArea(.all)
+                    .glur(offset: 0.3,
+                          interpolation: 0.2,
+                          radius: 4.0,
+                          direction: .down)
+                    .overlay {
+                        LinearGradient(stops: [.init(color: .clear, location: 0.7), .init(color: .white.opacity(0.2), location: 0.85)], startPoint: .top, endPoint: .bottom)
+                            .edgesIgnoringSafeArea(.all)
+                    }
             }
             else {
                 Image(uiImage: UIImage())
@@ -32,8 +42,8 @@ struct ImageClassificationView: View {
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .edgesIgnoringSafeArea(.all)
             }
-            
-            VStack {
+
+            VStack(spacing: 24) {
                 // display the classification result
                 Text(classification.classificationLabel)
                     .padding(20)
@@ -59,11 +69,16 @@ struct ImageClassificationView: View {
                         Text("Choose Photo")
                     })
                 } label: {
-                    Image(systemName: "camera")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .padding(5)
+                    ZStack {
+                        Circle()
+                            .frame(width: 64, height: 64)
+                        Image(systemName: "camera")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(.white)
+                            .padding(5)
+                    }
                 }
                 .sheet(isPresented: $isPresented, onDismiss: {
                     // Classify the image
